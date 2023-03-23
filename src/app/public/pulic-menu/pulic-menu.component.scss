@@ -166,13 +166,6 @@
                                 object-fit: cover;
                             }
 
-                            .item-image {
-                                width: 120px;
-                                height: 120px;
-                                border-radius: 15px;
-                                margin-left: 10px;
-                            }
-
                             .item-detail {
                                 display: flex;
                                 flex-direction: column;
@@ -227,9 +220,6 @@
 
 @media only screen and (min-width: 1550px) {
     .items-align {
-        flex-direction: row !important;
-        flex-wrap: wrap;
-
         .item-box {
             width: 31% !important;
             margin: 0 1%;
