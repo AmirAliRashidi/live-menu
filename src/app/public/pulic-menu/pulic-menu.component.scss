@@ -1,0 +1,242 @@
+@use '../../../styles.scss' as *;
+
+.header-menu {
+    width: 100%;
+    display: flex;
+    background-color: $backgroud-color;
+    flex-direction: column;
+    top: 0;
+    position: fixed;
+    z-index: 50;
+
+    .header-container {
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        padding: 25px;
+        width: 100%;
+
+        .image-align {
+            width: 50px;
+            height: 50px;
+        }
+    }
+
+    .category-main {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        overflow-x: scroll;
+        padding-bottom: 15px;
+
+        .category-box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 250px !important;
+            height: 50px;
+            background-color: $primary-color;
+            border-radius: $category-radius;
+            padding: 20px;
+            margin: 0px 5px;
+            color: $categoryname-color;
+            min-width: 185px;
+            font-size: .8rem;
+            text-decoration: none;
+            cursor: pointer;
+
+            .category-image {
+                width: 35px;
+                height: 35px;
+                margin-left: 5px;
+                border-radius: $image-radius;
+            }
+        }
+    }
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.items-main {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 140px;
+
+    .items-category {
+        border-top: 1px $primary-color solid;
+        margin: 1.5%;
+        padding: 15px;
+
+        .category-title {
+            font-size: 1.3rem;
+            margin-right: 1.5%;
+        }
+
+        .items-align {
+            display: flex;
+            flex-direction: column;
+
+            .item-box {
+                width: 100%;
+                background-color: $primary-color;
+                padding: 20px;
+                border-radius: $item-radius;
+                margin-top: 20px;
+
+                .box-align {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: row;
+
+                    .item-image {
+                        width: 120px;
+                        height: 120px;
+                        border-radius: 15px;
+                        object-fit: cover;
+                    }
+
+                    .item-detail {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        width: inherit;
+                        margin: 0 10px;
+
+                        .item-align {
+
+                            .item-title {
+                                font-size: 1rem;
+                                color: $itemtitle-color;
+                            }
+
+                            .item-desc {
+                                font-size: .8rem;
+                                color: $itemdescription-color;
+                            }
+                        }
+
+                        .item-price {
+                            color: $itemtitle-color;
+                            display: flex;
+                            justify-content: flex-end;
+                        }
+                    }
+                }
+            }
+
+            .sub-items-main {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+
+                .sub-item-head {
+                    margin: 15px 0 5px;
+                }
+
+                .sub-item-box-main {
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    width: 100%;
+
+                    .sub-item-box {
+                        width: 48%;
+                        background-color: $primary-color;
+                        padding: 20px;
+                        border-radius: 15px;
+                        margin-top: 20px;
+                        margin: 1%;
+
+                        .box-align {
+                            width: 100%;
+                            display: flex;
+                            flex-direction: row;
+
+                            .subitem-image {
+                                width: 50px;
+                                height: 50px;
+                                border-radius: 15px;
+                                margin-left: 5px;
+                                object-fit: cover;
+                            }
+
+                            .item-image {
+                                width: 120px;
+                                height: 120px;
+                                border-radius: 15px;
+                                margin-left: 10px;
+                            }
+
+                            .item-detail {
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: space-between;
+                                width: inherit;
+
+                                .item-align {
+
+                                    .item-title {
+                                        font-size: 1rem;
+                                        color: $itemtitle-color;
+                                    }
+                                }
+
+                                .item-price {
+                                    color: $itemtitle-color;
+                                    display: flex;
+                                    justify-content: flex-end;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .diasbled-item {
+                color: $disable-color !important;
+            }
+
+            .disabled {
+                background-color: $disable-backgroundcolor !important;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 850px) {
+    .items-align {
+        flex-direction: row !important;
+        flex-wrap: wrap;
+
+        .item-box {
+            width: 48% !important;
+            margin: 0 1%;
+        }
+
+        .sub-item-box {
+            width: 23% !important;
+        }
+    }
+}
+
+@media only screen and (min-width: 1550px) {
+    .items-align {
+        flex-direction: row !important;
+        flex-wrap: wrap;
+
+        .item-box {
+            width: 31% !important;
+            margin: 0 1%;
+        }
+
+        .sub-item-box {
+            width: 22.8% !important;
+        }
+    }
+}

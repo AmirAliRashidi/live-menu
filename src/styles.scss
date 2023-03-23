@@ -1,0 +1,35 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+$backgroud-color: #feff74;
+$primary-color: #7D001C;
+$categoryname-color: #e4ffff;
+$itemtitle-color: #fff;
+$itemdescription-color: #929292;
+$disable-color: #f00;
+$disable-backgroundcolor: #9e9e9e;
+
+$category-radius: 50px;
+$image-radius: 10px;
+$item-radius: 15px;
+
+html {
+    // This defines what 1rem is
+    font-size: 1em;
+    background-color: $backgroud-color !important;
+}
+
+body {
+    box-sizing: border-box;
+    font-family: IranSans FD, sans-serif !important;
+    font-weight: 400;
+}
+
+.primary-color {
+    color: $primary-color;
+}

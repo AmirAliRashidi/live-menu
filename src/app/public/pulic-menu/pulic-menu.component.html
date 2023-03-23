@@ -1,0 +1,56 @@
+<div class="header-menu">
+    <div class="header-container">
+        <img class="image-align" src="../../../../assets/img/logo.png">
+    </div>
+    <div class="category-main">
+        <a class="category-box" *ngFor="let category of menuData" (click)="scroll(category.name)">
+            <img [src]="category.image" class="category-image">
+            {{ category.name }}
+        </a>
+    </div>
+</div>
+
+<div class="items-main">
+    <div class="items-category" *ngFor="let category of menuData" [id]="category.name">
+        <h3 class="category-title">{{ category.secondname ? category.secondname : category.name }}</h3>
+        <div class="items-align">
+            <div class="item-box" *ngFor="let item of category.items" [ngClass]="!item.is_enable ? 'disabled' : ''">
+                <div class="box-align">
+                    <ng-container *ngIf="item.image">
+                        <img class="item-image" [src]="item.image">
+                    </ng-container>
+                    <div class="item-detail">
+                        <div class="item-align">
+                            <h5 class="item-title">{{ item.name }}</h5>
+                            <p class="item-desc">{{ item.description ? item.description : '' }}</p>
+                        </div>
+                        <p class="item-price diasbled-item" *ngIf="!item.is_enable">{{ menuDict.finishItem }}</p>
+                        <p class="item-price" *ngIf="item.is_enable">
+                            {{ item.price ? item.price.toLocaleString() + menuDict.price : '' }}
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="sub-items-main" *ngIf="category.subItemTitle">
+                <h3 class="sub-item-head">{{ category.subItemTitle }}</h3>
+                <div class="sub-item-box-main">
+                    <div *ngFor="let subItem of category.subItems" class="sub-item-box">
+                        <div class="box-align">
+                            <ng-container *ngIf="subItem.image">
+                                <img class="subitem-image" [src]="subItem.image">
+                            </ng-container>
+                            <div class="item-detail">
+                                <div class="item-align">
+                                    <h5 class="item-title">{{ subItem.name }}</h5>
+                                </div>
+                                <p class="item-price" *ngIf="subItem.is_enable">
+                                    {{ subItem.price ? subItem.price.toLocaleString() + menuDict.price : '' }}</p>
+                                <p class="item-price diasbled-item" *ngIf="!subItem.is_enable">{{ menuDict.finishItem }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
