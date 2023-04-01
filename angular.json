@@ -17,6 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "baseHref": "/live-menu/",
             "outputPath": "dist/live-menu",
             "index": "src/index.html",
             "main": "src/main.ts",

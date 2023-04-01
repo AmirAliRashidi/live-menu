@@ -1,9 +1,9 @@
 # LiveMenu
 
 Live Menu is an online menu working with JSON database.
-Watch [Demo](https://amiralirashidi.github.io)
+Watch [Demo](https://amiralirashidi.github.io/live-menu/)
 
-## Perspnalize
+## Personalize
 
 ### Styles
 
